@@ -31,15 +31,15 @@ public class BlockingQueuedemon {
 
         //异常组
         //Queue full
-       /* blockingQueue.add("a");
+        blockingQueue.add("a");
         blockingQueue.add("b");
-        blockingQueue.add("c");*/
-        //blockingQueue.add("d");
-        //System.out.println(blockingQueue);
+        blockingQueue.add("c");
+//        blockingQueue.add("d");
+//        System.out.println(blockingQueue);
         //Exception in thread "main" java.util.NoSuchElementException
-       /* blockingQueue.remove();
         blockingQueue.remove();
-        blockingQueue.remove();*/
+        blockingQueue.remove();
+        blockingQueue.remove();
         //blockingQueue.remove();
         //System.out.println(blockingQueue);
         //System.out.println(blockingQueue.element());

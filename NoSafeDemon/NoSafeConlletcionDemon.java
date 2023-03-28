@@ -25,7 +25,7 @@ public class NoSafeConlletcionDemon {
 
     public static void main(String[] args) {
 
-
+      NosafeMap();
     }
     public static void NosafeMap()
     {
@@ -66,23 +66,23 @@ public class NoSafeConlletcionDemon {
  * CopyOnWriteArrayList是arraylist的一种线程安全变体，
  * 其中所有可变操作（add、set等）都是通过生成底层数组的新副本来实现的。
  * 写时复制的原理和源码:
- *public boolean add(E e) {
- *          final ReentrantLock lock = this.lock;
- *          lock.lock();
- *        try {
- *             Object[] elements = getArray();
- *             int len = elements.length;
- *              Object[] newElements = Arrays.copyOf(elements, len + 1);
- *            newElements[len] = e;
- *             setArray(newElements);
- *             return true;
- *          } finally {
- *             lock.unlock();
- *         }
+ *public booleanadd(Ee) {
+ *      finalReentrantLock lock =this.lock;
+ *       lock.lock();
+ *    try{
+ *      Object[] elements = getArray();
+ *     intlen = elements.length;
+ *       Object[] newElements = Arrays.copyOf(elements, len +1);
+ *     newElements[len] = e;
+ *      setArray(newElements);
+ *     return true;
+ *       }finally{
+ *      lock.unlock();
+ *      }
  *     }
- *      
- *      
- *       
+ *     
+ *     
+ *      
  *    CopyOnWrite容器即写时复制的容器。往一个容器添加元素的时候，不直接往当前容器Object[]添加，
  *    而是先将当前容器Object[]进行Copy，复制出一个新的容器Object[] newElements，
  *    然后向新的容器Object[] newElements里添加元素。

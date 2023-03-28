@@ -61,25 +61,25 @@ public class CallableDemon1 {
     }
 }
 /**
- *  面试题:callable接口与runnable接口的区别？
- *  答：（1）是否有返回值
+ * 面试题:callable接口与runnable接口的区别？
+ * 答：（1）是否有返回值
  *      (2）是否抛异常
  *      (3）落地方法不一样，一个是run，一个是call
  *
  *
  * 面试题：获得多线程的方法几种？
- * （1）继承thread类（2）runnable接口,如果只回答这两个你连被问到juc的机会都没有 
+ * （1）继承thread类（2）runnable接口,如果只回答这两个你连被问到juc的机会都没有
  *正确答案如下：
  * 传统的是继承thread类和实现runnable接口，
  * java5以后又有实现callable接口和java的线程池获得
  *
  *
  * 直接替换runnable是否可行?
- *  不可行，因为：thread类的构造方法根本没有Callable
+ * 不可行，因为：thread类的构造方法根本没有Callable
  * 认识不同的人找中间人
  * 这像认识一个不认识的同学，我可以找中间人介绍。中间人是什么？java多态，一个类可以实现多个接口！！
- * FutureTask<Integer> ft = new FutureTask<Integer>(new MyThread());
- * new Thread(ft, "AA").start();
+ * FutureTask<Integer>ft=newFutureTask<Integer>(newMyThread());
+ * newThread(ft,"AA").start();
  * 运行成功后如何获得返回值？
  * ft.get();
  **/

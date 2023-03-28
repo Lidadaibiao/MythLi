@@ -75,21 +75,21 @@ public class Lambda {
     如果接口只有一个方法java默认它为函数式接口。
     为了正确使用Lambda表达式，需要给接口加个注解：@FunctionalInterface
     如有两个方法，立刻报错
-  
+ 
  Runnable接口为什么可以用lambda表达式?因为该接口上面有注解：@FunctionalInterface
 
 
-  
+ 
  接口里在java8后容许有接口的实现，default方法默认实现
  default int div(int x,int y) {
-   return x/y;
-  }
+  return x/y;
+ }
  接口里default方法可以有几个？多个
 
 
-  静态方法实现：接口新增 
+ 静态方法实现：接口新增
  public static int sub(int x,int y){
-   return x-y;
+ return x-y;
  }
  可以有几个？
  注意静态的叫类方法，能用foo去调吗？要改成Foo

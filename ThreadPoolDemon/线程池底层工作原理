@@ -10,3 +10,21 @@
 4、当一个线程无事可做超过一定的时间（keepAliveTime）时，线程会判断：
 如果当前运行的线程数大于corePoolSize，那么这个线程就被停掉。
 所以线程池的所有任务完成后，它最终会收缩到corePoolSize的大小。
+
+拒绝策略：
+AbortPolicy(默认策略)：抛出RejectedExecutionException来拒绝新任务的处理，这代表着你将丢弃这个任务的处理
+CallerRunsPolicy(提供可伸缩队列)：直接在调用execute方法的线程中运行(run)被拒绝的任务
+a:该策略直接在调用者线程中，运行当前被丢弃的任务
+ 1. 调用者线程:即execute这个方法的线程
+     调用execute方法的线程，同时也是创建当前线程池的线程
+     特别是调用者为主线程的时候，指的就是main线程
+DiscardPolicy:直接拒绝任务，不会给你任何通知
+DiscardOldestPolicy:只要还有任务新增，一直会丢弃阻塞队列中workqueue的最老任务，并将新的任务加入。
+
+
+线程池举例：
+eg1:一个线程池 core 7 max 20 queue 50  100并发如何分配？
+1:7个立即得到执行
+2：50个会进入队列
+3:再开13个线程
+4：剩下30个就使用拒绝策略，如果不想抛弃

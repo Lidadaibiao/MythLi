@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class A
+class B
+class C
+class D
+interface interface1{
+operation1();
+operation2();
+operation3();
+operation4();
+operation5();
+}
+
+A ..|>interface1 :通过interface1依赖类D
+B ..>interface1
+C ..|>interface1 :通过interface1依赖类B
+D ..>interface1
+
+'
+'class AbstractList
+'abstract AbstractCollection
+'interface List
+'interface Collection
+'
+'List <|-- AbstractList
+'Collection <|-- AbstractCollection
+'
+'Collection <|- List
+'AbstractCollection <|- AbstractList
+'AbstractList <|-- ArrayList
+'
+'class ArrayList {
+'Object[] elementData
+'size()
+'}
+'
+'enum TimeUnit {
+'DAYS
+'HOURS
+'MINUTES
+'}
+
+@enduml

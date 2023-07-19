@@ -3,6 +3,7 @@ package com.lidadaibiao.JUC;
 
 
 
+import com.sun.istack.internal.NotNull;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -10,6 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
 class ShareDate
 {
     //设置标志位
+    @NotNull
     private int number = 1;
     private Lock lock = new ReentrantLock();
     private Condition c1 = lock.newCondition();//我把C1 C2 C3看做信号量

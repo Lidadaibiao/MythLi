@@ -32,38 +32,31 @@ public class QuickSort {
   }
 
   private static void quickSort(int[] arr, int l, int r) {
-    //临界点退出
-    if (l >= r) {
-      return;
-    }
+   if (l>=r) return;
 
-    //定义随机取值
-    int x = arr[l + r >> 1];
+   //定义一个中间值
+   int x =arr[l+r>>1];
 
-    //定义双指针
-    int i = l - 1;
-    int j = r + 1;
+   //定义双指针
+    int i = l-1;
+    int j = r+1;
 
-    //递归处理
-    while (i < j) {
-      //如果i这边的都小于x   则 i 向前移动。
-      do {
-        i++;
-      } while (arr[i] < x);
-      do {
-        j--;
-      } while (arr[j] > x);
+    while (i<j){
+      //如果 i 这边的都小于x 则i 向前移动
+      do i++; while (arr[i]<=x);
+      //如果 j 这边的都大于x 则j 向后移动
+      do j --; while (arr[j]>x);
 
-      //交换位置
-      if (i < j) {
-        arr[i] = arr[i] ^ arr[j];
-        arr[j] = arr[i] ^ arr[j];
-        arr[i] = arr[i] ^ arr[j];
+      if (i<j){
+        arr[i] = arr[i]^arr[j];
+        arr[j] = arr[i]^arr[j];
+        arr[i] = arr[i]^arr[j];
       }
-    }
 
-    quickSort(arr, l, j);
-    quickSort(arr, j + 1, r);
+    }
+    quickSort(arr,l,j);
+    quickSort(arr,j+1,r);
+
 
   }
 }

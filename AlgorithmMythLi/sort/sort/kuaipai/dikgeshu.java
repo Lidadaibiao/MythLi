@@ -1,4 +1,4 @@
-package com.lidadaibiao.JUC.AlgorithmMythLi.sort;
+package com.lidadaibiao.JUC.AlgorithmMythLi.sort.sort.kuaipai;
 
 import java.io.BufferedReader;
 import java.io.IOException;
